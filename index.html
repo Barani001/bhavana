@@ -364,6 +364,49 @@ body{
     z-index:1000;
 }
 
+/* MUSIC CLICK NOTIFICATION */
+.music-hint{
+    position:absolute;
+    right:2px;
+    bottom:72px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2px;
+    pointer-events:none;
+    z-index:1001;
+    animation:musicHint 1.4s ease-in-out infinite;
+}
+
+.music-hint-text{
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:1px;
+    color:#fff;
+    text-shadow:
+        0 0 8px rgba(255,79,154,.9),
+        0 0 18px rgba(157,78,221,.8);
+    white-space:nowrap;
+}
+
+.music-hint-arrow{
+    font-size:30px;
+    line-height:1;
+    color:#fff;
+    text-shadow:
+        0 0 10px rgba(255,79,154,.9),
+        0 0 20px rgba(157,78,221,.8);
+}
+
+@keyframes musicHint{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-7px);
+    }
+}
+
 .music-button{
     width:60px;
     height:60px;
@@ -1167,6 +1210,11 @@ footer{
 <!-- MUSIC BUTTON -->
 
 <div class="music-control">
+
+    <div class="music-hint" aria-hidden="true">
+        <div class="music-hint-text">CLICK IT</div>
+        <div class="music-hint-arrow">↓</div>
+    </div>
 
     <button
         class="music-button"
